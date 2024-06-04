@@ -82,7 +82,7 @@ const setting: ProjectConfig = {
   // Menu configuration
   menuSetting: {
     // sidebar menu bg color
-    bgColor: SIDE_BAR_BG_COLOR_LIST[0],
+    bgColor: SIDE_BAR_BG_COLOR_LIST[3],
     //  Whether to fix the left menu
     fixed: true,
     // Menu collapse
@@ -101,7 +101,7 @@ const setting: ProjectConfig = {
     // Menu width
     menuWidth: 210,
     // Menu mode
-    mode: MenuModeEnum.INLINE,
+    mode: MenuModeEnum.VERTICAL,
     // Menu type
     type: MenuTypeEnum.SIDEBAR,
     // Menu theme
@@ -111,7 +111,7 @@ const setting: ProjectConfig = {
     // Top menu layout
     topMenuAlign: 'center',
     // Fold trigger position
-    trigger: TriggerEnum.HEADER,
+    trigger: TriggerEnum.FOOTER,
     // Turn on accordion mode, only show a menu
     accordion: true,
     // Switch page to close menu

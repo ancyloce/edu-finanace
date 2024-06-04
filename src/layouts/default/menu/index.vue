@@ -3,7 +3,7 @@
 
   import { computed, defineComponent, unref, toRef } from 'vue';
   import { BasicMenu } from '@/components/Menu';
-  import { SimpleMenu } from '@/components/SimpleMenu';
+  // import { SimpleMenu } from '@/components/SimpleMenu';
   import { AppLogo } from '@/components/Application';
 
   import { MenuModeEnum, MenuSplitTyeEnum } from '@/enums/menuEnum';
@@ -49,7 +49,7 @@
         getAccordion,
         getIsHorizontal,
         getIsSidebarType,
-        getSplit,
+        // getSplit,
       } = useMenuSetting();
       const { getShowLogo } = useRootSetting();
 
@@ -142,9 +142,7 @@
         const { menus, ...menuProps } = unref(getCommonProps);
         // console.log(menus);
         if (!menus || !menus.length) return null;
-        return !props.isHorizontal ? (
-          <SimpleMenu {...menuProps} isSplitMenu={unref(getSplit)} items={menus} />
-        ) : (
+        return (
           <BasicMenu
             {...(menuProps as any)}
             isHorizontal={props.isHorizontal}

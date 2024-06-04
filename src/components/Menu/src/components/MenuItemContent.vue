@@ -1,8 +1,13 @@
 <template>
   <span :class="`${prefixCls}- flex items-center `">
     <img v-if="getImg" :src="getImg" class="w-18px h-18px align-top mr-2" />
-    <Icon v-if="getIcon" :icon="getIcon" :size="18" :class="`${prefixCls}-wrapper__icon mr-2`" />
-    {{ getI18nName }}
+    <Icon
+      v-if="getIcon"
+      :icon="getIcon"
+      :size="getCollapsed ? 24 : 18"
+      :class="`${prefixCls}-wrapper__icon mr-2`"
+    />
+    <span>{{ getI18nName }}</span>
   </span>
 </template>
 <script lang="ts" setup>
@@ -11,6 +16,7 @@
   import { useI18n } from '@/hooks/web/useI18n';
   import { useDesign } from '@/hooks/web/useDesign';
   import { contentProps } from '../props';
+  import { useMenuSetting } from '@/hooks/setting/useMenuSetting';
 
   defineOptions({ name: 'MenuItemContent' });
 
@@ -22,4 +28,5 @@
   const getI18nName = computed(() => t(props.item?.meta?.title || props.item?.name));
   const getIcon = computed(() => (props.item?.img ? undefined : props.item?.icon));
   const getImg = computed(() => props.item?.img);
+  const { getCollapsed } = useMenuSetting();
 </script>
